@@ -1,0 +1,31 @@
+# permissions for end users to edit networkgenerators.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: networkgenerator-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: netgen-operator
+    app.kubernetes.io/part-of: netgen-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: networkgenerator-editor-role
+rules:
+- apiGroups:
+  - kosmos.matt.test.dev
+  resources:
+  - networkgenerators
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - kosmos.matt.test.dev
+  resources:
+  - networkgenerators/status
+  verbs:
+  - get

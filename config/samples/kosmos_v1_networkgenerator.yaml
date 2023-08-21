@@ -1,0 +1,12 @@
+apiVersion: kosmos.matt.test.dev/v1
+kind: NetworkGenerator
+metadata:
+  labels:
+    app.kubernetes.io/name: networkgenerator
+    app.kubernetes.io/instance: networkgenerator-sample
+    app.kubernetes.io/part-of: netgen-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: netgen-operator
+  name: networkgenerator-sample
+spec:
+  # TODO(user): Add fields here
